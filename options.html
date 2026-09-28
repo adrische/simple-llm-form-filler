@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Simple LLM Form Filler Settings</title>
+  <style>
+    body { font-family: sans-serif; padding: 15px; width: 360px; }
+    h3 { margin: 12px 0 6px 0; font-size: 14px; border-bottom: 1px solid #ccc; padding-bottom: 4px; }
+    label { font-weight: bold; display: block; margin-top: 8px; font-size: 12px; }
+    input { width: 100%; box-sizing: border-box; margin-top: 4px; }
+    button { margin-top: 14px; padding: 6px 12px; width: 100%; cursor: pointer; }
+    #status { margin-top: 8px; font-size: 12px; color: green; }
+  </style>
+</head>
+<body>
+  <h3>Default: Local (Ollama)/h3>
+  <label for="ollamaUrl">Ollama Base URL:</label>
+  <input type="text" id="ollamaUrl" value="http://localhost:11434">
+  
+  <label for="ollamaModel">Local Model Name:</label>
+  <input type="text" id="ollamaModel" placeholder="e.g., gemma4:e2b">
+  
+  <h3>Fall-back: Remote (OpenRouter)</h3>
+  <label for="apiKey">API Key:</label>
+  <input type="password" id="apiKey" placeholder="sk-or-v1-...">
+
+  <label for="openrouterModel">Model ID:</label>
+  <input type="text" id="openrouterModel" value="google/gemini-3.8-flash">
+
+  <h3>Context</h3>
+  <label for="fileInput">Context File (.txt, .md):</label>
+  <input type="file" id="fileInput" accept=".txt,.md">
+
+  <button id="save">Save Settings</button>
+  <div id="status"></div>
+
+  <script src="options.js"></script>
+</body>
+</html>
